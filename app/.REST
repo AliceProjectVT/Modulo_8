@@ -1,0 +1,75 @@
+###
+// Iniciar sesión con usuario que no existente 
+POST http://localhost:3000/api/signin
+Content-Type: application/json
+
+{
+  "email": "juan.perez5@correo.com",
+  "password":"123456"
+}
+###
+// Crear un usuario 
+POST http://localhost:3000/api/signup
+Content-Type: application/json
+
+{
+  "firstName": "Juan",
+  "lastName": "Pérez",
+  "email": "juan.perez5@correo.com",
+  "password":"123456"
+}
+###
+// Iniciar sesión con el nuevo usuario
+POST http://localhost:3000/api/signin
+Content-Type: application/json
+
+{
+  "email": "juan.perez5@correo.com",
+  "password":"123456"
+}
+###
+// Obtener datos de usuario y los Bootcamps a los que se ha registrado
+GET http://localhost:3000/api/users
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwiaWF0IjoxNzMwMjc1MzMxLCJleHAiOjE3MzAzNjE3MzF9.QmAOlYj4tK9PIdmOQ73B8svEKymFsFd6tS4aCUBQl_s
+###
+// Listar usuario por ID
+GET http://localhost:3000/api/users/1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwiaWF0IjoxNzMwMjc1MzMxLCJleHAiOjE3MzAzNjE3MzF9.QmAOlYj4tK9PIdmOQ73B8svEKymFsFd6tS4aCUBQl_s
+###
+// Actualizar usuario
+PUT http://localhost:3000/api/users/1
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwiaWF0IjoxNzMwMjQ5Mjg0LCJleHAiOjE3MzAzMzU2ODR9.yfP4noB89nwamhDLpXd4TgvZPPAz-3ES5R0Mxac2l1Q
+
+{ 
+  "firstName": "Juan",
+  "lastName": "Adolfo",
+  "email": "mateo.diaz@correo.com"
+}
+###
+// Obtener usuario 1 que será actualizado y sus bootcamps
+GET http://localhost:3000/api/users/1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwiaWF0IjoxNzMwMjUwMjg0LCJleHAiOjE3MzAzMzY2ODR9.6OI5-JK2EG5uWB58QICdAyIkAsUU6ISMcydiydMRh5o
+###
+// Actualizar usuario (datos originales al iniciar la app) 
+PUT http://localhost:3000/api/users/1
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwiaWF0IjoxNzMwMjUwMjg0LCJleHAiOjE3MzAzMzY2ODR9.6OI5-JK2EG5uWB58QICdAyIkAsUU6ISMcydiydMRh5o
+
+{ 
+  "firstName": "Mateo",
+  "lastName": "Díaz",
+  "email": "mateo.diaz@correo.com"
+}
+### 
+// Eliminar usuario
+DELETE http://localhost:3000/api/users/1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwiaWF0IjoxNzMwMjUwMjg0LCJleHAiOjE3MzAzMzY2ODR9.6OI5-JK2EG5uWB58QICdAyIkAsUU6ISMcydiydMRh5o
+
+###
+// Listar bootcamp por ID
+GET http://localhost:3000/api/bootcamps/1
+
+###
+// Consultar todos los Bootcamps con sus respectivos alumnos
+GET http://localhost:3000/api/bootcamps
